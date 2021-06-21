@@ -13,6 +13,11 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="home.css">
 
@@ -20,22 +25,23 @@
 </head>
 <body>
     <div class="bg">
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Tourism</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#images">Images</a></li>
-                    <li><a href="#contact">Contact us</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <nav class="navbar navbar-expand-lg navbar-inverse">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar"> 
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar"> 
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item" id="brand">   
+                         <a href="#" class="nav-link">  Tourism </a>  </li>
+                    <li class="nav-item">
+                         <a href="#services" class="nav-link">  Services </a> </li>
+                    <li class="nav-item"> 
+                        <a href="#images" class="nav-link">  Images </a> </li>
+                    <li class="nav-item"> 
+                        <a href="#contact" class="nav-link">  Contact Us </a> </li>
                 </ul>
             </div>
+    
         </nav>
 
         <div class="container text-center text-white heading">
@@ -74,7 +80,7 @@
         </div>
 
     </section>
-    <section id="images" class="images bg-light">
+    <section id="images" class="images">
         <div class="container text-center">
             <h1>IMAGES</h1>
             <p>Some of the examples of the views u get</p>
@@ -137,13 +143,13 @@
 
     <section id="contact">
         <div class="container">
-            <div style="text-align:center">
-              <h2>Contact Us</h2>
+            <div class="contact_head" style="text-align:center">
+              <h1>Contact Us</h1>
               <p>Swing by for a cup of coffee, or leave us a message:</p>
             </div>
             <div class="row">
               <div class="column">
-                <img src="img/location.jpg" style="width:100%">
+                <img src="img/map.png" style="width:100%">
               </div>
               <div class="column">
                 <form action="/action_page.php">
@@ -151,11 +157,11 @@
                   <input type="text" id="fname" name="firstname" placeholder="Your name..">
                   <label for="lname">Last Name</label>
                   <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-                  <label for="country">Country</label>
-                  <select id="country" name="country">
-                    <option value="australia">Australia</option>
-                    <option value="canada">Canada</option>
-                    <option value="usa">USA</option>
+                  <label for="city">City</label>
+                  <select id="city" name="city">
+                    <option value="hyd">Hyderabad</option>
+                    <option value="mum">Mumabi</option>
+                    <option value="del">Delhi</option>
                   </select>
                   <label for="subject">Subject</label>
                   <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
