@@ -14,6 +14,34 @@
 
     <link rel="stylesheet" href="home.css">
 
+
+    <script>
+        function funs(){
+            var w=document.getElementById("weather").value
+            var request = new XMLHttpRequest();
+            if (w != "none") {
+                request.open("GET","https://api.openweathermap.org/data/2.5/weather?q="+w+"&appid=93f26e3c57081a6210de53b8dcfdfea4",true);
+                request.onload =  function() {
+                    if( request.status>=200 && request.status<400){
+                        var data = JSON.parse(request.responseText);
+                        document.getElementById('temp').innerHTML = "The temperatue is " + data.main.temp;
+                        document.getElementById('clouds').innerHTML = "The weather is " + data.weather[0].description;
+                        var url = "https://openweathermap.org/img/w/"+data.weather[0].icon+".png";
+                        document.getElementById('myimg').src = url ;
+                    }
+                    else {
+                        console.log("Some error");
+                    }
+                };
+                request.onerror = function(){
+                    console.log("Connection error");
+                };
+                request.send();
+            }
+        }
+    </script>
+
+
     <title>Tourism</title>
 </head>
 <body>
@@ -74,6 +102,29 @@
                 <h2>DELHI</h2>
                 <p>The place covered in this city are ISKCON Hare Krishna Temple,Kalkaji Mandir Hindu Temple,Jama Masjid,Akshardham Temple,Gurudwara Bangla Sahib (Sikh Temple),Laxmi Narayan Mandir,etc</p>
             </div>
+        </div>
+        <div class="weathers">
+            <div class="weatherh">
+                <h2>Select city to get weather updates</h2>
+            </div>
+            <select id="weather" onchange="funs()">
+                <option value="none">
+                    Select
+                </option>
+                <option value="Hyderabad">
+                    Hyderabad
+                </option>
+                <option value="Mumbai">
+                    Mumbai
+                </option>
+                <option value="Delhi">
+                    Delhi
+                </option>
+            </select>
+            <br>
+            <img id="myimg" src="">
+            <h2 id="temp"></h2>
+            <h3 id="clouds"></h3>
         </div>
 
     </section>
@@ -233,6 +284,8 @@
             }
             footer.classList.toggle("active");
         }
+
+
     </script>
 
 </body>

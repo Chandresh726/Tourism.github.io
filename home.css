@@ -97,7 +97,15 @@ body.active {
     padding-bottom: 50px;
     border-radius: 50%;
 }
-
+.weathers {
+    text-align: center;
+    margin-top: 40px;
+}
+.weathers select {
+    color: black;
+    align-content: center;
+    width: 400px;
+}
 .images {
     background-color: rgb(216, 203, 203);
     width: 100%;
@@ -196,4 +204,9 @@ footer.active {
       width: 100%;
       margin-top: 0;
     }
+    #mode {
+        left: 10px;
+        margin: 5px 0px;
+    }
+
   }
