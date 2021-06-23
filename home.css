@@ -1,5 +1,6 @@
 * {
     margin: 0px 0px;
+    padding: 0px;
 }
 body {
     width: 100%;
@@ -96,6 +97,11 @@ section {
 }
 .services h2 {
     font-weight: bold;
+}
+.services .colu {
+    margin: 0px;
+    padding: 0px;
+    width: 100px;
 }
 .logo {
     padding: 50px 0px;
@@ -204,9 +210,8 @@ footer.active {
   }
 
   @media screen and (max-width: 600px) {
-
     .bg {
-        height: 700px;
+        height: 800px;
     }
     .heading h2 {
         font-size: 26px;
@@ -227,7 +232,11 @@ footer.active {
     .services h2 {
         font-size: 18px;
     }
-    .rowsetting .col {
+    .rowsetting {
+        padding: 0px;
+        width: 366px;
+    }
+    .rowsetting {
         border-bottom: 2px black solid;
     }
     .images {
