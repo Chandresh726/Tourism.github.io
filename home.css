@@ -206,7 +206,7 @@ footer.active {
   @media screen and (max-width: 600px) {
 
     .bg {
-        height: 640px;
+        height: 700px;
     }
     .heading h2 {
         font-size: 26px;
