@@ -13,34 +13,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="home.css">
-
-
-    <script>
-        function funs(){
-            var w=document.getElementById("weather").value
-            var request = new XMLHttpRequest();
-            if (w != "none") {
-                request.open("GET","https://api.openweathermap.org/data/2.5/weather?q="+w+"&appid=93f26e3c57081a6210de53b8dcfdfea4",true);
-                request.onload =  function() {
-                    if( request.status>=200 && request.status<400){
-                        var data = JSON.parse(request.responseText);
-                        document.getElementById('temp').innerHTML = "The temperatue is " + parseFloat(data.main.temp-273.0).toFixed(1) + "°C";
-                        document.getElementById('clouds').innerHTML = "The weather is " + data.weather[0].description;
-                        var url = "https://openweathermap.org/img/w/"+data.weather[0].icon+".png";
-                        document.getElementById('myimg').src = url ;
-                    }
-                    else {
-                        console.log("Some error");
-                    }
-                };
-                request.onerror = function(){
-                    console.log("Connection error");
-                };
-                request.send();
-            }
-        }
-    </script>
-
+    <script src="main.js"></script>
 
     <title>Tourism</title>
 </head>
@@ -54,9 +27,9 @@
             <div class="collapse navbar-collapse" id="mynavbar"> 
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item" id="brand">   
-                         <a href="#" class="nav-link">  Tourism </a>  </li>
+                        <a href="#" class="nav-link" >  Tourism </a>  </li>
                     <li class="nav-item">
-                         <a href="#services" class="nav-link">  Services </a> </li>
+                        <a href="#services" class="nav-link" >  Services </a> </li>
                     <li class="nav-item"> 
                         <a href="#images" class="nav-link">  Images </a> </li>
                     <li class="nav-item"> 
@@ -81,21 +54,21 @@
         <p>currently we provide services in Hyderabad, Mumabi, Delhi.</p>
 
         <div class="row rowsetting">
-            <div class=" col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
+            <div class="cols col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
                 <div class="logo d-block m-auto">
                     <img src="img/hyd.png" alt="" height="140px">
                 </div>
                 <h2>HYDERABAD</h2>
                 <p>The place covered in this city are Golconda Fort,The Charminar,Mecca Masjid,Qutb Shahi Tombs,Hussain Sagar Lake,Ramoji Film City,Salar Jung Museum,Chowmahalla Palace.</p>
             </div>
-            <div class=" col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
+            <div class="cols col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
                 <div class="logo d-block m-auto">
                     <img src="img/mum.png" alt="" height="140px">
                 </div>
                 <h2>MUMBAI</h2>
                 <p>The place covered in this city are the Gateway of India,Watch the Sunset on Marine Drive,Drive across the Bandra-Worli Sea Link,Take Pictures of the Taj Mahal Palace, Mumbai,Visit the Kanheri Caves.</p>
             </div>
-            <div class=" col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
+            <div class="cols col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
                 <div class="logo d-block m-auto">
                     <img src="img/del.png" alt="" height="140px">
                 </div>
@@ -213,12 +186,16 @@
                   </select>
                   <label for="subject">Subject</label>
                   <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
-                  <input type="submit" value="Submit">
+                  <input type="submit" value="Submit" onclick="funsform()">
                 </form>
               </div>
             </div>
           </div>
     </section>
+
+    <div id="gototop" class="gototop">
+        <a href="#"></a>
+    </div>
 
     <footer class="page-footer font-small blue pt-4">
         <div class="container-fluid text-center text-md-left">
@@ -278,14 +255,15 @@
             toggle.classList.toggle("active");
             header.classList.toggle("active");
             body.classList.toggle("active");
+            for(let i=0;i<4;i++) {
+                document.getElementsByClassName('nav-link')[i].classList.toggle("active");
+            }
             document.getElementById('images').classList.toggle("active");
             for(let i=0;i<6;i++) {
                 document.getElementsByClassName('card')[i].classList.toggle("active");
             }
             footer.classList.toggle("active");
         }
-
-
     </script>
 
 </body>
