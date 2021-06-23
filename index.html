@@ -24,7 +24,7 @@
                 request.onload =  function() {
                     if( request.status>=200 && request.status<400){
                         var data = JSON.parse(request.responseText);
-                        document.getElementById('temp').innerHTML = "The temperatue is " + data.main.temp;
+                        document.getElementById('temp').innerHTML = "The temperatue is " + parseFloat(data.main.temp-273.0).toFixed(1) + "°C";
                         document.getElementById('clouds').innerHTML = "The weather is " + data.weather[0].description;
                         var url = "https://openweathermap.org/img/w/"+data.weather[0].icon+".png";
                         document.getElementById('myimg').src = url ;
