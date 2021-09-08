@@ -44,11 +44,9 @@ function funsform(){
 
 }
 
-let map;
-
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 17.3972, lng: 78.4900 },
-    zoom: 35,
-  });
-}
+$('.carousel').carousel().on('slide.bs.carousel', function (e) {
+    var nextH = $(e.relatedTarget).height();
+    $(this).find('.active.item').parent().animate({
+        height: nextH
+    }, 2000);
+});
