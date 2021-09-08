@@ -43,3 +43,12 @@ function funsform(){
     alert("Form has been successfully submitted!");
 
 }
+
+let map;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 17.3972, lng: 78.4900 },
+    zoom: 35,
+  });
+}

@@ -13,12 +13,8 @@ body.active {
     background-color: rgb(34, 31, 31);
     color: rgb(233, 223, 223);
 }
-.bg {
-    background-image: url(img/sunset.jpg);
-    background-size: 100% 100%;
-    background-attachment: fixed;
-    width: 100%;
-    height: 740px;
+#map {
+    height: 100%;
 }
 .navbar {
     border-radius: 0%;
@@ -94,6 +90,12 @@ nav a.active {
 section {
     width: 100%;
 }
+.city {
+    
+    padding: 10px;
+    border:  rgb(128, 124, 124) 2px solid;
+    border-radius: 10px;
+}
 .services {
     text-align: center;
     padding: 100px 10px 60px;
@@ -115,6 +117,10 @@ section {
 .logo {
     padding: 50px 0px;
     border-radius: 50%;
+}
+.btn {
+    padding: 8px;
+    font-size: medium;
 }
 .weathers {
     text-align: center;

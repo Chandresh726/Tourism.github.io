@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -18,35 +19,33 @@
     <title>Tourism</title>
 </head>
 <body>
-    <div class="bg">
-        <nav class="navbar navbar-expand-lg">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar"> 
-                <span class="navbar-toggler-icon"></span>
-                <span class="plogo">TOURISM</span>
-            </button>
-            <div class="collapse navbar-collapse" id="mynavbar"> 
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item" id="brand">   
-                        <a href="#" class="nav-link" >  Tourism </a>  </li>
-                    <li class="nav-item">
-                        <a href="#services" class="nav-link" >  Services </a> </li>
-                    <li class="nav-item"> 
-                        <a href="#images" class="nav-link">  Images </a> </li>
-                    <li class="nav-item"> 
-                        <a href="#contact" class="nav-link">  Contact Us </a> </li>
-                </ul>
-            </div>
-        </nav>
-
-        <div class="container text-center text-white heading">
-            <h2>Welcome to our site!</h2>
-            <h1>HOPE U HAVE A GOOD TIME</h1>
+    <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar"> 
+            <span class="navbar-toggler-icon"></span>
+            <span class="plogo">TOURISM</span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar"> 
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item" id="brand">   
+                    <a href="#" class="nav-link" >  Tourism </a>  </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link" >  Services </a> </li>
+                <li class="nav-item"> 
+                    <a href="#images" class="nav-link">  Images </a> </li>
+                <li class="nav-item"> 
+                    <a href="#contact" class="nav-link">  Contact Us </a> </li>
+            </ul>
         </div>
-    </div>
-    <div id="mode">
-        <i class="indicator">
 
-        </i>
+        <div id="mode">
+            <i class="indicator">
+    
+            </i>
+        </div>
+    </nav>
+    
+    <div id="scroller">
+
     </div>
 
     <section id="services" class="container services text-center ">
@@ -54,26 +53,29 @@
         <p>currently we provide services in Hyderabad, Mumabi, Delhi.</p>
 
         <div class="row rowsetting">
-            <div class="cols col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
+            <div class="city cols col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
                 <div class="logo d-block m-auto">
                     <img src="img/hyd.png" alt="" height="140px">
                 </div>
                 <h2>HYDERABAD</h2>
                 <p>The place covered in this city are Golconda Fort,The Charminar,Mecca Masjid,Qutb Shahi Tombs,Hussain Sagar Lake,Ramoji Film City,Salar Jung Museum,Chowmahalla Palace.</p>
+                <button type="button" class="btn btn-success">More ...</button>
             </div>
-            <div class="cols col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
+            <div class="city cols col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
                 <div class="logo d-block m-auto">
                     <img src="img/mum.png" alt="" height="140px">
                 </div>
                 <h2>MUMBAI</h2>
-                <p>The place covered in this city are the Gateway of India,Watch the Sunset on Marine Drive,Drive across the Bandra-Worli Sea Link,Take Pictures of the Taj Mahal Palace, Mumbai,Visit the Kanheri Caves.</p>
+                <p>The place covered in this city are the Gateway of India,Watch the Sunset on Marine Drive,Drive across the Bandra-Worli Sea Link,Take Pictures of the Taj Mahal Palace,Visit the Kanheri Caves.</p>
+                <button type="button" class="btn btn-success">More ...</button>
             </div>
-            <div class="cols col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
+            <div class="city cols col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto">
                 <div class="logo d-block m-auto">
                     <img src="img/del.png" alt="" height="140px">
                 </div>
                 <h2>DELHI</h2>
                 <p>The place covered in this city are ISKCON Hare Krishna Temple,Kalkaji Mandir Hindu Temple,Jama Masjid,Akshardham Temple,Gurudwara Bangla Sahib (Sikh Temple),Laxmi Narayan Mandir,etc</p>
+                <button type="button" class="btn btn-success">More ...</button>
             </div>
         </div>
         <div class="weathers">
@@ -170,7 +172,13 @@
             </div>
             <div class="row">
               <div class="column">
-                <img src="img/map.png" style="width:100%">
+                <div id="map"></div>
+
+                <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+                <script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0sM3-mFN4n6-Ja1S9sanRpBrjYVCXnKs&callback=initMap&libraries=&v=weekly"
+                async
+                ></script>
               </div>
               <div class="column">
                 <form action="/action_page.php">
