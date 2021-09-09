@@ -31,8 +31,6 @@ body.active {
 .nav-item {
     font-size: 18px;
     margin-left: 8px;
-    border-left: rgb(0, 0, 0) 3px solid;
-    border-radius: 3px;
 }
 nav a {
     color: rgb(34, 33, 33);
@@ -339,7 +337,6 @@ footer.active {
 
 
     #mode {
-        left: 10px;
         margin: 7px 0px;
         width: 70px;
         height: 35px;
@@ -347,6 +344,10 @@ footer.active {
     .indicator {
         width: 35px;
         height: 35px;
+    }
+
+    .city1 {
+        border-left: none;
     }
 
   }
