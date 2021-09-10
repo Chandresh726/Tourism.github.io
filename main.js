@@ -50,3 +50,4 @@ $('.carousel').carousel().on('slide.bs.carousel', function (e) {
         height: nextH
     }, 2000);
 });
+
